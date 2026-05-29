@@ -1,0 +1,364 @@
+:root {
+  --bg1: #0b1220;
+  --bg2: #121a2f;
+  --card: rgba(255, 255, 255, 0.08);
+  --card2: rgba(255, 255, 255, 0.12);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.7);
+  --primary: #22c55e;
+  --primary2: #16a34a;
+  --danger: #ef4444;
+  --border: rgba(255, 255, 255, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(900px 500px at 10% 10%, #1f2a44 0%, transparent 55%),
+    radial-gradient(700px 500px at 80% 20%, rgba(34, 197, 94, 0.25) 0%,
+        transparent 55%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.authPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.authContainer {
+  width: 100%;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .authContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.authBrand {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--card), rgba(255, 255, 255, 0.03));
+  border-radius: 18px;
+  padding: 26px;
+  overflow: hidden;
+  position: relative;
+}
+
+.authBrand::after {
+  content: "";
+  position: absolute;
+  inset: -80px -60px auto auto;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at 30% 30%, rgba(34, 197, 94, 0.35), transparent 60%);
+  transform: rotate(20deg);
+}
+
+.brandTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.logoDot {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), #60a5fa);
+  box-shadow: 0 10px 35px rgba(34, 197, 94, 0.35);
+}
+
+.brandName {
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  font-size: 16px;
+}
+
+.brandHeadline {
+  font-size: 36px;
+  line-height: 1.08;
+  margin: 0 0 10px;
+}
+
+.brandSub {
+  margin: 0 0 18px;
+  color: var(--muted);
+  max-width: 46ch;
+}
+
+.brandBullets {
+  display: grid;
+  gap: 10px;
+}
+
+.bullet {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+}
+
+.bulletMark {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--primary);
+  margin-top: 6px;
+  flex: 0 0 auto;
+}
+
+.bulletText {
+  color: var(--muted);
+}
+
+.authCard {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--card), rgba(255, 255, 255, 0.03));
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.authTitle {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.authSubtitle {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 12px;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  color: var(--text);
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input:focus {
+  border-color: rgba(34, 197, 94, 0.65);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  font-weight: 700;
+  user-select: none;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, var(--primary), var(--primary2));
+  border-color: rgba(34, 197, 94, 0.55);
+  color: white;
+}
+
+.btnPrimary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnSecondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+
+.btnSecondary:hover,
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0;
+}
+
+.link {
+  color: rgba(34, 197, 94, 0.95);
+  font-weight: 700;
+}
+
+.toast {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.15);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.toastError {
+  border-color: rgba(239, 68, 68, 0.45);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.homePage {
+  min-height: 100vh;
+  padding: 28px;
+}
+
+.homeHeader {
+  max-width: 1100px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.homeMain {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.homeHero {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--card2), rgba(255, 255, 255, 0.03));
+  border-radius: 18px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .homeHero {
+    grid-template-columns: 1fr;
+  }
+}
+
+.homeHeroText h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+.homeHeroText p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.homeHeroCard {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.homeHeroCard h3 {
+  margin: 0 0 10px;
+}
+
+.homeHeroCard ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.homeFeatures {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .homeFeatures {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.featureTitle {
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.featureDesc {
+  color: var(--muted);
+}
+
+.homeFooter {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-size: 12px;
+}
+
