@@ -5,7 +5,7 @@ const express=require("express");
 const app=express()
 const cors = require('cors')
 require("dotenv").config()
-const port=process.env.port
+const port=process.env.PORT || 5000;
 const mongoose=require("mongoose");
 const {createAccount, login}=require("./controllers/user")
 const middleware=require("./middleware/auth");
