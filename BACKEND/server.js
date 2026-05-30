@@ -11,9 +11,7 @@ const mongoose = require("mongoose");
 const { createAccount, login } = require("./controllers/user");
 
 app.use(cors({
-  origin: [
-    "https://fullproject-4-1wdy.onrender.com"
-  ],
+  origin: "https://fullproject-x2o5.vercel.app",
   credentials: true
 }));
 
