@@ -28,6 +28,7 @@ const AppRoutes = () => {
       <Route
         path="/signup"
         element={authToken ? <Navigate to="/" replace /> : <Signup />}
+        
       />
       <Route path="/menu" element={<Menu />} />
       <Route

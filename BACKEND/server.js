@@ -13,7 +13,7 @@ const middleware=require("./middleware/auth");
 app.use(cors())
 app.use(express.json());
 
-app.post("/signin",createAccount);
+app.post("/signup",createAccount);
 app.post("/login",login);
 
 mongoose.connect(process.env.mongoose_url)

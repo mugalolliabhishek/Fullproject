@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import api from '../services/api';
 import { useAppContext } from '../context/AppContext';
 import Loader from '../components/Loader';
-
+const BaseURL = import.meta.env.VITE_BASE_URL || 'http://localhost:5000';
 const Login = () => {
   const navigate = useNavigate();
   const { login, showToast } = useAppContext();

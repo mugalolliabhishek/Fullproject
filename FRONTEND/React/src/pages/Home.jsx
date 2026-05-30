@@ -4,7 +4,7 @@ import { useAppContext } from '../context/AppContext';
 import { heroImage, categoryImages } from '../assets/foodImages';
 import { categories, featuredItems } from '../data';
 
-const BaseURL = import.meta.env.VITE_URL || 'http://localhost:5000';
+const BaseURL = import.meta.env.VITE_Base_URL || 'http://localhost:5000';
 
 const Home = () => {
   const { addToCart } = useAppContext();

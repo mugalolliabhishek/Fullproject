@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+
 const NotFound = () => (
   <section className="flex min-h-[60vh] items-center justify-center px-4 py-16">
     <div className="w-full max-w-3xl rounded-[2rem] bg-slate-900/95 p-10 text-center shadow-soft">

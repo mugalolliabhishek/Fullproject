@@ -37,7 +37,7 @@ const Signup = () => {
 
       login(token);
       showToast('Signup successful', 'success');
-      navigate('/');
+      navigate('/signup');
     } catch (err) {
       const message = err?.response?.data?.message || err?.message || 'Unable to create account';
       setError(message);
