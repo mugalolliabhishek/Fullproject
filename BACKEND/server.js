@@ -1,28 +1,34 @@
 const dns = require('dns');
-dns.setServers(['1.1.1.1', '8.8.8.8'])
+dns.setServers(['1.1.1.1', '8.8.8.8']);
 
-const express=require("express");
-const app=express()
-const cors = require('cors')
-require("dotenv").config()
-const port=process.env.PORT || 5000;
-const mongoose=require("mongoose");
-const {createAccount, login}=require("./controllers/user")
-const middleware=require("./middleware/auth");
+const express = require("express");
+const app = express();
+const cors = require('cors');
+require("dotenv").config();
 
-app.use(cors())
+const port = process.env.PORT || 5000;
+const mongoose = require("mongoose");
+const { createAccount, login } = require("./controllers/user");
+
+app.use(cors({
+  origin: [
+    "https://fullproject-4-1wdy.onrender.com"
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 
-app.post("/signup",createAccount);
-app.post("/login",login);
+app.post("/signup", createAccount);
+app.post("/login", login);
 
 mongoose.connect(process.env.mongoose_url)
-.then(()=>{ 
-     app.listen(port,()=>{
-    console.log(`server is running port number is ${port}`);
-    console.log("mongoosedb connected")  
-})
-})
-.catch((error)=>{
-    console.log("mongoosedb not connected",error)
-})
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`server is running port number is ${port}`);
+      console.log("mongoosedb connected");
+    });
+  })
+  .catch((error) => {
+    console.log("mongoosedb not connected", error);
+  });
